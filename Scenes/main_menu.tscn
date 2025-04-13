@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hdpnq8h8jgcc"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_yjbje"]
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_yjbje"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iev5t"]
 size = Vector2(1920, 1080)
@@ -16,32 +16,29 @@ offset_bottom = 116.0
 texture = SubResource("PlaceholderTexture2D_iev5t")
 
 [node name="StartGameButton" type="Button" parent="CanvasGroup"]
-offset_left = 761.0
-offset_top = 853.0
-offset_right = 857.0
-offset_bottom = 884.0
+offset_left = 730.0
+offset_top = 860.0
+offset_right = 869.0
+offset_bottom = 902.0
+theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
 [node name="SettingsButton" type="Button" parent="CanvasGroup"]
-offset_left = 947.0
+offset_left = 968.0
 offset_top = 860.0
-offset_right = 1017.0
-offset_bottom = 891.0
+offset_right = 1069.0
+offset_bottom = 902.0
+theme_override_font_sizes/font_size = 24
 text = "Settings"
 
 [node name="QuitGameButton" type="Button" parent="CanvasGroup"]
-offset_left = 1101.0
+offset_left = 1149.0
 offset_top = 860.0
-offset_right = 1193.0
-offset_bottom = 891.0
+offset_right = 1282.0
+offset_bottom = 902.0
+theme_override_font_sizes/font_size = 24
 text = "Quit Game
 "
-
-[node name="SettingsScreen" type="CanvasLayer" parent="CanvasGroup"]
-
-[node name="CloseSettingsButton" type="Button" parent="CanvasGroup/SettingsScreen"]
-offset_right = 8.0
-offset_bottom = 8.0
 
 [connection signal="pressed" from="CanvasGroup/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="CanvasGroup/SettingsButton" to="." method="_on_settings_button_pressed"]

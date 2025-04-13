@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg5dncxpgm2t0"]
+
+[ext_resource type="Script" path="res://Scripts/UI/settings_screen.gd" id="1_g6aqm"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n8asm"]
+size = Vector2(1920, 1080)
+
+[node name="SettingsMenu" type="Node2D"]
+z_index = 51
+script = ExtResource("1_g6aqm")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="SettingsBackgroundTextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_n8asm")
+
+[node name="CloseSettingsButton" type="Button" parent="CanvasGroup"]
+offset_left = 1866.0
+offset_top = 10.0
+offset_right = 1910.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="VolumeHSlider" type="HSlider" parent="CanvasGroup"]
+offset_left = 840.0
+offset_top = 490.0
+offset_right = 1107.0
+offset_bottom = 666.0
+value = 50.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasGroup"]
+offset_left = 889.0
+offset_top = 48.0
+offset_right = 1085.0
+offset_bottom = 122.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Settings"
+
+[connection signal="pressed" from="CanvasGroup/CloseSettingsButton" to="." method="_on_close_settings_button_pressed"]
+[connection signal="value_changed" from="CanvasGroup/VolumeHSlider" to="." method="_on_volume_h_slider_value_changed"]

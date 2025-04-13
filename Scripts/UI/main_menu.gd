@@ -1,23 +1,24 @@
 extends Node2D
 
-@onready var settings_screen = $CanvasGroup/SettingsScreen
+var settingsScreen = preload("res://Scenes/settings_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	settings_screen.hide()
-
+	
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 #region Main Menu Buttons
 func _on_start_game_button_pressed():
-	self.hide()
-
+	SignalManager.startingGame.emit()
+	self.queue_free()
 
 func _on_settings_button_pressed():
-	settings_screen.show()
-
+	var settingsScreenInstance = settingsScreen.instantiate()
+	add_child(settingsScreenInstance)
 	
 func _on_quit_game_button_pressed():
 	get_tree().quit()

@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0n1wphde1yjd"]
+[gd_scene load_steps=4 format=3 uid="uid://b0n1wphde1yjd"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_d58k7"]
+[ext_resource type="Texture2D" uid="uid://dskeyflqy4ob3" path="res://icon.svg" id="2_dh3rp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ndjre"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dh5p"]
+size = Vector2(128, 128)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_d58k7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ndjre")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dh3rp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2dh5p")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
