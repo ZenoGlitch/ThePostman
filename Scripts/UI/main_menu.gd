@@ -1,10 +1,7 @@
 extends Node2D
 
-var settingsScreen = preload("res://Scenes/settings_menu.tscn")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,8 +14,7 @@ func _on_start_game_button_pressed():
 	self.queue_free()
 
 func _on_settings_button_pressed():
-	var settingsScreenInstance = settingsScreen.instantiate()
-	add_child(settingsScreenInstance)
+	add_child(Global.InstanceSettingsScreen())
 	
 func _on_quit_game_button_pressed():
 	get_tree().quit()

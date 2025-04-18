@@ -5,7 +5,7 @@ const SPEED = 300.0
 var canBeClicked : bool = false
 var playerScreenOpen = false
 
-var player_screen_scene = preload("res://Scenes/player_screen.tscn")
+var player_screen_scene = preload("res://Scenes/UI/player_screen.tscn")
 var player_screen_position : Vector2
 
 func _ready():

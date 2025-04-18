@@ -4,8 +4,8 @@ enum GameState {MAIN_MENU, RUNNING, PAUSED}
 
 var game_state : GameState = GameState.MAIN_MENU
 
-var settings_screen = preload("res://Scenes/settings_menu.tscn")
-var pause_screen = preload("res://Scenes/pause_menu.tscn")
+var settings_screen = preload("res://Scenes/UI/settings_menu.tscn")
+var pause_screen = preload("res://Scenes/UI/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
