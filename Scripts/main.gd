@@ -27,10 +27,9 @@ func _on_game_start():
 func _on_pause_screen_opened():
 	Global.SetGameState(Global.GameState.PAUSED)
 	get_node("Player").get_child(0).add_child(Global.InstancePauseScreen())
-	var pauseScreenPosX = player.position.x - (get_window().size.x / 2)
-	var pauseScreenPosY = player.position.y - (get_window().size.y / 2)
+	
+	#Set pause menu spawn position
+	var pauseScreenPosX = -get_window().size.x / 2
+	var pauseScreenPosY = -get_window().size.y / 2
 	pause_menu = get_node("Player").get_child(0).get_child(0)
 	pause_menu.position = Vector2(pauseScreenPosX, pauseScreenPosY)
-	
-	#TODO: spawn pause screen
-	pass

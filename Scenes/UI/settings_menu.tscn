@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg5dncxpgm2t0"]
 
-[ext_resource type="Script" path="res://Scripts/UI/settings_screen.gd" id="1_g6aqm"]
+[ext_resource type="Script" path="res://Scripts/UI/settings_screen.gd" id="1_el5y0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n8asm"]
 size = Vector2(1920, 1080)
 
 [node name="SettingsMenu" type="Node2D"]
 z_index = 51
-script = ExtResource("1_g6aqm")
+script = ExtResource("1_el5y0")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 

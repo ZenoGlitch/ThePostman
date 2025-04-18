@@ -3,6 +3,13 @@ class_name Player
 
 const SPEED = 300.0
 var canBeClicked : bool = false
+var playerScreenOpen = false
+
+var player_screen_scene = preload("res://Scenes/player_screen.tscn")
+var player_screen_position : Vector2
+
+func _ready():
+	SignalManager.playerScreenClosed.connect(on_player_screen_closed)
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -24,15 +31,29 @@ func _physics_process(delta):
 
 #region internal signals
 func _on_mouse_entered():
-	canBeClicked = true
-	pass # Replace with function body.
-	
+	if not playerScreenOpen:
+		canBeClicked = true
+
+func _on_mouse_exited():
+	canBeClicked = false
+
 func _on_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("InteractPrimary"):
 		if canBeClicked:
-			#TODO: Open "player menu" or "inventory" or whatever we'll call it
-			pass
-	pass # Replace with function body.
+			playerScreenOpen = true
+			var playerScreenInstance = player_screen_scene.instantiate()
+			add_child(playerScreenInstance)
+			get_node("PlayerScreen").position = player_screen_position
+			canBeClicked = false
+
+#endregion
 
 
+#region SignalManager signals
+func on_player_screen_closed(p_pos):
+	#possibly move the player_screen_position variable to global?
+	player_screen_position = p_pos
+	playerScreenOpen = false
+	
+	
 #endregion

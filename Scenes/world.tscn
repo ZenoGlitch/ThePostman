@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0hagpp7nbcwv"]
+
+[ext_resource type="Texture2D" uid="uid://dxkwstfs0h0ru" path="res://Assets/Textures/photo_2025-04-18_13-07-27.jpg" id="1_t3qn6"]
+
+[node name="World" type="Node2D"]
+
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_t3qn6")
+
+[node name="Ground2" type="TextureRect" parent="."]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 1280.0
+texture = ExtResource("1_t3qn6")
