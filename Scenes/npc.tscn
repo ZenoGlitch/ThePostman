@@ -18,21 +18,31 @@ z_index = 1
 texture = ExtResource("2_pp8ec")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-visible = false
 scale = Vector2(41.36, -39.4933)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-visible = false
 position = Vector2(-2.84217e-14, -8.96355)
 rotation = 1.5708
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_tvrp8")
 one_way_collision_margin = 8.0
 
 [node name="InteractArea2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 356)
 
 [node name="InteractCollisionShape2D" type="CollisionShape2D" parent="InteractArea2D"]
 shape = SubResource("RectangleShape2D_4o3qc")
 
+[node name="InteractPromptLabel" type="Label" parent="."]
+visible = false
+offset_left = -185.0
+offset_top = 417.0
+offset_right = -17.0
+offset_bottom = 448.0
+scale = Vector2(2.25585, 1.85715)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Press \"E\" to talk"
+
 [connection signal="body_entered" from="InteractArea2D" to="." method="_on_interact_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractArea2D" to="." method="_on_interact_area_2d_body_exited"]

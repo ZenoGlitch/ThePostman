@@ -27,6 +27,12 @@ func _unhandled_input(event):
 		
 		pass
 		
+	if Input.is_action_just_pressed("InteractSecondary"):
+		if Global.game_state == Global.GameState.RUNNING:
+			if Global.playerCanInteract:
+				print("Hi there, stranger!")
+				#TODO: Signal it's time for conversation?
+		
 	#Default key: B
 	if Input.is_action_just_pressed("OpenMailBag"):
 		
