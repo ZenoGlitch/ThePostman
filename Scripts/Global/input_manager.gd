@@ -20,7 +20,7 @@ func _unhandled_input(event):
 				
 			Global.GameState.PAUSED:
 				SignalManager.pauseScreenClosed.emit()
-				Global.SetGameState(Global.GameState.RUNNING)
+
 	
 	#Default key: Left Mouse Button
 	if Input.is_action_just_pressed("InteractPrimary"):

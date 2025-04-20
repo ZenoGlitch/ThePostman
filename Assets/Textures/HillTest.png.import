@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxkwstfs0h0ru"
-path="res://.godot/imported/photo_2025-04-18_13-07-27.jpg-52e1cc87b2b47c27e95da7aaa522d9bc.ctex"
+uid="uid://cd5ayyuoxoli0"
+path="res://.godot/imported/HillTest.png-de9cbdcc026e63fca18a8c631595adb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/photo_2025-04-18_13-07-27.jpg"
-dest_files=["res://.godot/imported/photo_2025-04-18_13-07-27.jpg-52e1cc87b2b47c27e95da7aaa522d9bc.ctex"]
+source_file="res://Assets/Textures/HillTest.png"
+dest_files=["res://.godot/imported/HillTest.png-de9cbdcc026e63fca18a8c631595adb7.ctex"]
 
 [params]
 

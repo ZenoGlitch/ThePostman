@@ -7,10 +7,11 @@ var game_state : GameState = GameState.MAIN_MENU
 var settings_screen = preload("res://Scenes/UI/settings_menu.tscn")
 var pause_screen = preload("res://Scenes/UI/pause_menu.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
 
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

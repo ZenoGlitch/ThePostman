@@ -37,7 +37,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	canBeClicked = false
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if Input.is_action_just_pressed("InteractPrimary"):
 		if canBeClicked:
 			playerScreenOpen = true
